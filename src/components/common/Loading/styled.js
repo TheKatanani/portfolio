@@ -11,12 +11,12 @@ export const LoadingStyled = styled.div `
     height: 50px;
     border: 3px solid #f3f3f3;
     border-radius: 50%;
-     border-top-color: ${(props)=>props.theme.palette.ColorApp.primary}; 
+     border-top-color: ${(props)=>props.theme.palette.ColorApp.third}; 
     animation: spin 2s linear infinite;
   }
   .loading-message {
     font-size: 2rem;
-     color: ${(props)=>props.theme.palette.ColorApp.primary}; 
+     color: ${(props)=>props.theme.palette.ColorApp.third}; 
     text-align: center;
     margin-top: 1rem;
   }

@@ -1,8 +1,13 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { StyledAbout } from './styled';
 
 const About = () => {
+  const {t} =useTranslation();
   return (
-    <div>About</div>
+    <StyledAbout>
+    <div>{t("hello world")}</div>
+    </StyledAbout>
   )
 }
 
