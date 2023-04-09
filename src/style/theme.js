@@ -29,7 +29,6 @@ const ColorApp = {
   third_bold:"#0000ee",
   dark: "#1C1C1C",
   white: "#FFFFFF",
-  card_hover: "#f2f7f2",
   gray_800: "#606060",
   gray_600: "#505050",
   gray_500: "#8B96A5",

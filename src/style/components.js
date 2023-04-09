@@ -26,4 +26,25 @@ export const MainButton = styled.button `
     text-align: center;
     cursor: pointer;
     border: none;
+    `
+export const BlueButton = styled(MainButton)`
+    border-radius:100px;
+    background-color: ${(props) => props.theme.palette.ColorApp.third};
+    color:${(props) => props.theme.palette.main};
+    border:1px solid ${(props) => props.theme.palette.ColorApp.third_bold};
+    :hover{
+        background-color:${(props) => props.theme.palette.main} ;
+        color:${(props) => props.theme.palette.ColorApp.third};
+    }
+`
+export const WhiteButton = styled(MainButton)`
+    border-radius:100px;
+    background-color: ${(props) => props.theme.palette.main};
+    color:${(props) => props.theme.palette.font};
+    border:1px solid ${(props) => props.theme.palette.font};
+    :hover{
+        background-color: ${(props) => props.theme.palette.ColorApp.third};
+    color:${(props) => props.theme.palette.main};
+    border-color: ${(props) => props.theme.palette.ColorApp.third_bold};
+    }
 `

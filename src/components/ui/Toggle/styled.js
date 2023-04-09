@@ -5,11 +5,11 @@ export const MainStayled = styled.div`
   padding:5px 20px 5px 20px;
   background-color: ${(props) => props.theme.palette.ColorApp.third};
   position:fixed;
-  z-index:999;
+  z-index:99999;
   border-radius: 6px;
   top:30px;
   text-align:center;
-  left:-150px;
+  left:-120px;
   transition: all 0.5s;
   :hover{
     left: -3px;
@@ -19,7 +19,13 @@ export const MainStayled = styled.div`
  }
 `;
 export const ButtonStayled = styled.button`
+${({theme})=>theme.theme === "dark"&&`
+  img{
+    rotate:180deg;
+  }
+`}
 img{
+  transition: 0.4s;
   width:30px;
   height:30px;
 }  transition: all 0.5s;
