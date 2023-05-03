@@ -32,9 +32,13 @@ export const BlueButton = styled(MainButton)`
     background-color: ${(props) => props.theme.palette.ColorApp.third};
     color:${(props) => props.theme.palette.main};
     border:1px solid ${(props) => props.theme.palette.ColorApp.third_bold};
+    font-weight: bold;
+    transition: 0.3s;
+    text-transform: uppercase;
     :hover{
         background-color:${(props) => props.theme.palette.main} ;
-        color:${(props) => props.theme.palette.ColorApp.third};
+        background-color:transparent ;
+        color:${(props) => props.theme.palette.ColorApp.dark};
     }
 `
 export const WhiteButton = styled(MainButton)`
