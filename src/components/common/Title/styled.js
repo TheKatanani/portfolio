@@ -6,6 +6,7 @@ export const StyledTitle = styled.h1`
     color:${(props) =>  props.theme.palette.ColorApp.dark};
     text-transform: capitalize;
     position: relative;
+    text-align: center;
     ::before{
       content: "";
       position: absolute;

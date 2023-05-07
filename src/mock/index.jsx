@@ -7,10 +7,10 @@ export const info = {
   name:"Mohammed Katanani",
   jobTitle:"Front-End Developer",
   discription:"Hello, and welcome to my portfolio! My name is Mohammed Katanani, and I'm a front-end developer skilled in React, Redux, HTML, CSS, and JavaScript. My portfolio showcases examples of my work in development and user experience. Let's collaborate! Please feel free to contact me with any questions or opportunities.",
-  facebock:"",
-  instagram:"",
-  linkedin:"",
-  github:"",
+  facebock:"https://www.facebook.com/MohammedKatanani10",
+  instagram:"https://www.instagram.com/mohammed_katanani",
+  linkedin:"https://www.linkedin.com/in/mohammed-katanani",
+  github:"https://github.com/mohammed-katanani",
 }
 export const porjects =[
   {
@@ -27,7 +27,7 @@ export const porjects =[
     title:"Brand(AliExpress clone)", 
     subTitle:"e-commerce website",
     discription:["BrandP1", "BrandP2", "BrandP3","BrandP4","BrandP5","BrandP6"] ,
-    demo:"brand-ali-express-clone.netlify.app",
+    demo:"https://brand-ali-express-clone.netlify.app",
     repo:"https://github.com/Mohammed-katanani/ecommerceProject"
   },
   {

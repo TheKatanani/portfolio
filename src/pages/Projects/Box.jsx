@@ -2,7 +2,8 @@ import React from 'react'
 import { StyledBox } from './styled'
 import { useTranslation } from 'react-i18next'
 import Skills from '../../components/ui/Skills'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import Links from '../../components/common/Links'
 
 const Box = ({ demo,repo, title , subTitle, discription,img,skills }) => {
   const { t } = useTranslation()
@@ -29,10 +30,11 @@ const Box = ({ demo,repo, title , subTitle, discription,img,skills }) => {
             })
           }
         </ul>
-        <div className='linkes'>
+        {/* <div className='linkes'>
           <Link to={demo} target='_blank'>demo</Link>
           <Link to={repo} target='_blank'>repo</Link>
-        </div>
+        </div> */}
+        <Links {...{repo , demo}}/>
           </div>
         </div>
         }

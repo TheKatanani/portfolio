@@ -8,6 +8,9 @@ export const SkillStyled = styled.span`
   padding: 4px 12px;
   cursor: pointer;
   transition:0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   :hover{
     background-color: ${(props)=>props.theme.palette.ColorApp.third};
   }

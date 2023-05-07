@@ -3,7 +3,7 @@ import { StyledTitle } from './styled'
 
 const Title = ({children}) => {
   return (
-    <StyledTitle>{children}</StyledTitle>
+    <StyledTitle className='title'>{children}</StyledTitle>
   )
 }
 
