@@ -8,7 +8,7 @@ const Footer = () => {
     <StyledFooter>
       <Container className='container'>
       <p className="copyRight">&copy; 2023 made with ❤ by mohammed katanani</p>
-      <ul>
+      <ul className='infoUl'>
         <li>
           <h3>call</h3>
           <p>+970592263808</p>

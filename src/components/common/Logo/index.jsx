@@ -6,7 +6,7 @@ import { ThemeContext } from '../../../Context';
 const Logo = () => {
   const [theme, ] = useContext(ThemeContext);
   return (
-    <img  src={theme.theme === "light" ? Light : Dark} alt='logo'/>
+    <img className='logo' src={theme.theme === "light" ? Light : Dark} alt='logo'/>
   )
 }
 

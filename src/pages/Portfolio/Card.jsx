@@ -18,14 +18,14 @@ const Card = ({ demo, repo, title, discription, img, skills }) => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         </p>
-        <div className='skills'>
+        {/* <div className='skills'>
           {
             skills.map((li, i) => {
               return <span key={i}> #{li} </span>
             })
           }
-          </div>
-          {/* <Skills data={skills} /> */}
+          </div> */}
+          <Skills data={skills} />
       </main>
       {/* <footer className='linkes'>
         <Link to={demo} target='_blank'>demo</Link>

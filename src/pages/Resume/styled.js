@@ -10,7 +10,7 @@ export const StyledResume = styled.div`
     color:${(props) =>  props.theme.palette.ColorApp.dark};
   }
   .container{
-  width: 850px;
+  max-width: 850px;
 }
 section:not(:first-child){
   margin: 70px 0;
@@ -29,6 +29,7 @@ section:not(:first-child){
   div ul{
     gap:25px;
     display: flex;
+    flex-wrap: wrap;
   }
 }
 `

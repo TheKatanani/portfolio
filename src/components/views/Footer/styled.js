@@ -8,7 +8,13 @@ export const StyledFooter = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    ${({theme})=>theme.media.m}{
+      justify-content: center;
+      }
     ul{
+      flex-wrap: wrap;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -21,6 +27,17 @@ export const StyledFooter = styled.div`
           margin: 0 -10px;
           fill:${(props) => props.theme.palette.font};
         }
+      }
+    }
+    ${({theme})=>theme.media.xs}{
+      justify-content: center;
+      .infoUl{
+        order: -1;
+        >li{
+          margin: 20px 0;
+        }
+        justify-content: center;
+        display: block;
       }
     }
   }

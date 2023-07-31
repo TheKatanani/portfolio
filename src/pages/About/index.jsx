@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { StyledAbout } from './styled';
 import Card from './Card';
-import { BlueButton, Container, WhiteButton } from '../../style/components';
+import { Container } from '../../style/components';
 import { useTranslation } from 'react-i18next'
 import { LangContext } from '../../Context';
+import Buttons from './Buttons';
 
 const About = () => {
   const {t} =useTranslation();
@@ -15,10 +16,7 @@ const About = () => {
         <div className="content">
           <h1>{t("hello")}</h1>
           <p>{t("whoIAm")}</p>
-          <div className="buttons">
-            <BlueButton>{t("resume")}</BlueButton>
-            <WhiteButton>{t("projects")}</WhiteButton>
-          </div>
+          <Buttons/>
           <p className="discription">{t("discription")}</p>
         </div>
       </Container>

@@ -9,24 +9,21 @@ const fontSizes = {
   body2: 0.76,
 };
 const media = {
-  // X-Small devices (portrait phones, less than 576px)
-  xs:'@media (max-width: 575.9px)',
-  // Small devices (landscape phones, 576px and up)
-  s: '@media (min-width: 576px)',
-  // Medium devices (tablets, 768px and up)
-  m: '@media (min-width: 768px)',
-  // Large devices (desktops, 992px and up)
-  l: '@media (min-width: 992px)',
-  // X-Large devices (large desktops, 1200px and up)
-  xl: '@media (min-width: 1200px)',
-  // XX-Large devices (larger desktops, 1400px and up)
-  xxl: '@media (min-width: 1400px)'
-}
+  // Extra small devices (portrait phones, less than 576px)
+  xs: '@media (max-width: 575.98px)',
+  // Small devices (landscape phones, less than 768px)
+  s: '@media (max-width: 767.98px)',
+  // Medium devices (tablets, less than 992px)
+  m: '@media (max-width: 991.98px)',
+  // Large devices (desktops, less than 1200px)
+  l: '@media (max-width: 1199.98px)'
+};
+
 const ColorApp = {
-  primary: "#f4ece6",
-  secondary:"#e6dace",
-  third:"#0050ff",
-  third_bold:"#0000ee",
+  primary: "#8FACC0",
+  secondary:"#D2E4F1",
+  third:"#0A4D68",
+  third_bold:"#254450",
   dark: "#1C1C1C",
   white: "#FFFFFF",
   gray_800: "#606060",

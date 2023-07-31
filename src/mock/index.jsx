@@ -3,6 +3,11 @@ import upwork from '../assets/images/Upwork.png'
 import brand from '../assets/images/brand.png'
 import game from '../assets/images/game.png'
 import resturant from '../assets/images/resturant.png'
+import test from '../assets/images/Screenshot 2023-07-28 145654.png'
+import test2 from '../assets/images/Screenshot 2023-07-28 160436.png'
+import test3 from '../assets/images/Screenshot 2023-07-28 171838.png'
+import test4 from '../assets/images/Screenshot 2023-07-29 172617.png'
+
 export const info = {
   name:"Mohammed Katanani",
   jobTitle:"Front-End Developer",
@@ -12,17 +17,25 @@ export const info = {
   linkedin:"https://www.linkedin.com/in/mohammed-katanani",
   github:"https://github.com/mohammed-katanani",
 }
+export const MenuItems =[
+  {path:'about',name:'ABOUT ME'},
+  {path:'resume',name:'RESUME'},
+  {path:'projects',name:'PROJECTS'},
+  {path:'contact',name:'CONTACT'},
+  {path:'portfolio',name:'PORTFOLIO'},
+]
 export const porjects =[
   {
-    img:upwork,
+    img:test3,
     skills:["json-server","styled-component","react","redux","authantication"],
     title:"Upwork Clone", 
+    subTitle:"Freelance Platform",
     discription:["UpworkP1", "UpworkP2", "UpworkP3"] ,
     demo:"https://gsg-upwork.netlify.app",
     repo:"https://github.com/Mohammed-katanani/Upwork"
   },
   {
-    img:brand,
+    img:test2,
     skills:["two Themes","styled-component","react","responsive"],
     title:"Brand(AliExpress clone)", 
     subTitle:"e-commerce website",
@@ -31,7 +44,7 @@ export const porjects =[
     repo:"https://github.com/Mohammed-katanani/ecommerceProject"
   },
   {
-    img:game,
+    img:test4,
     skills:["authantication","class coomponents","react"],
     title:"PS-Game", 
     discription:["PS-GameP1", "PS-GameP2", "PS-GameP3","PS-GameP4"] ,
@@ -39,11 +52,30 @@ export const porjects =[
     repo:"https://github.com/Mohammed-katanani/ps-game"
   },
   {
-    img:resturant,
+    img:test,
     skills:["responsive","class coomponents","react"],
     title:"Vegan Restaurant Website", 
     discription:["RestaurantP1", "RestaurantP2"] ,
     demo:"https://vegan-restaurant-mk.netlify.app",
     repo:"https://github.com/Mohammed-katanani/vegan-restaurant"
+  },
+]
+
+export const portfolio =[
+  {
+    img:upwork,
+    skills:["json-server","styled-component","react","redux","authantication"],
+    title:"Upwork Clone", 
+    discription:"" ,
+    demo:"https://gsg-upwork.netlify.app",
+    repo:"https://github.com/Mohammed-katanani/Upwork"
+  },
+  {
+    img:upwork,
+    skills:["Html","css"],
+    title:"Upwork Clone", 
+    discription:"" ,
+    demo:"https://gsg-upwork.netlify.app",
+    repo:"https://github.com/Mohammed-katanani/Upwork"
   },
 ]

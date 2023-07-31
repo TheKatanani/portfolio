@@ -3,6 +3,7 @@ import Avater from '../../components/common/Avater'
 import { StyledCard } from './styled'
 import { useTranslation } from 'react-i18next'
 import Social from '../../components/ui/Toggle/Social'
+import Buttons from './Buttons'
 
 const Card = () => {
   const {t} =useTranslation();
@@ -12,6 +13,7 @@ const Card = () => {
         <Avater/>
         <div className="name">{t("name")}</div>
         <div className="jobTitle">{t("jobTitle")}</div>
+        <Buttons/>
       </main>
       <footer>
         <Social/>

@@ -8,7 +8,7 @@ export const StyledLinks = styled.div`
     a{
       transition: 0.3s;
       flex:1;
-      padding: 10px 0;
+      padding: 5px 0;
       :first-child{
         background-color: ${(props) =>  props.theme.palette.ColorApp.third};
         border-top-left-radius: 12px;
