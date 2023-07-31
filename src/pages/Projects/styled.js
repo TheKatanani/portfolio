@@ -217,7 +217,7 @@ main{
       left:0;
       bottom:0;
       width: 0;
-      background-color: #ffffffef;
+      background-color: ${(props) => props.theme.palette.main}ee;
       z-index: 1;
     }
     /* edite here on font  */

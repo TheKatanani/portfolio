@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { BlueButton, Container } from '../../../../style/components';
+import { BlueButton } from '../../../../style/components';
 import Input from '../../../common/Input';
 import { Label, Input as InputStyled } from '../../../common/Input/style';
 import { StyledContactForm } from './styled';

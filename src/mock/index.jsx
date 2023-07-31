@@ -1,8 +1,8 @@
 // images 
 import upwork from '../assets/images/Upwork.png'
-import brand from '../assets/images/brand.png'
-import game from '../assets/images/game.png'
-import resturant from '../assets/images/resturant.png'
+// import brand from '../assets/images/brand.png'
+// import game from '../assets/images/game.png'
+// import resturant from '../assets/images/resturant.png'
 import test from '../assets/images/Screenshot 2023-07-28 145654.png'
 import test2 from '../assets/images/Screenshot 2023-07-28 160436.png'
 import test3 from '../assets/images/Screenshot 2023-07-28 171838.png'

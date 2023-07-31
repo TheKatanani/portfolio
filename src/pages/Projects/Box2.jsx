@@ -2,7 +2,6 @@ import React from 'react'
 import {  StyledBox2 } from './styled'
 import { useTranslation } from 'react-i18next'
 import Skills from '../../components/ui/Skills'
-// import { Link } from 'react-router-dom'
 import Links from '../../components/common/Links'
 
 const Box = ({ demo, repo, title, subTitle, discription, img, skills }) => {
@@ -20,13 +19,6 @@ const Box = ({ demo, repo, title, subTitle, discription, img, skills }) => {
           <Skills data={skills} />
         <main>
             <ul className='discription'>
-              {/* {
-                discription.map((li, i) => {
-                  return <li key={i}>{t(li)}</li>
-                })
-              } */}
-              {/* <li >{t(discription[0])}</li>
-              <li >{t(discription[1])}</li> */}
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur debitis magni mollitia praesentium reprehenderit placeat vel odit veniam neque perferendis provident id alias enim totam modi, nulla inventore ratione asperiores.</p>
             </ul>
             <Links {...{ repo, demo }} />
