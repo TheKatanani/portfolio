@@ -14,13 +14,13 @@ const MyRoutes = ()=>{
         <Routes>
             <Route index element={<Navigate to="/About"/>}  />
             <Route path="About" element={<About/>} />
-            <Route path="Resume" element={<Resume/>} />
+            <Route path="resume" element={<Resume/>} />
             <Route path="Projects" element={<Projects/>} />
-            <Route path="Contact" element={<Contact/>} />
+            <Route path="contact" element={<Contact/>} />
             <Route path="Portfolio" element={<Portfolio/>} />
             <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </Suspense>
     )
-}
+  }
 export default MyRoutes;
