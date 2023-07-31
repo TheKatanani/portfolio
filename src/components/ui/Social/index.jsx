@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { info } from '../../../../mock'
-import { FaceBook, GitHub, Instagram, LinkedIn } from '../../../../assets/Icons'
+import { info } from '../../../mock'
+import { FaceBook, GitHub, Instagram, LinkedIn } from '../../../assets/Icons'
 import { StyledSocial } from './styled'
 
 const Social = () => {

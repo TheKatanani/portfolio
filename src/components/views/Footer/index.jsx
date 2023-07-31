@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledFooter } from './styled'
 import { Container } from '../../../style/components'
-import Social from '../../ui/Toggle/Social'
+import Social from '../../ui/Social'
 
 const Footer = () => {
   return (

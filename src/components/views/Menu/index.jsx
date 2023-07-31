@@ -4,6 +4,8 @@ import Portal from '../Portal'
 import { StyledMenu } from './Styled'
 import { MenuItems } from '../../../mock'
 import { MenuContext } from '../../../Context'
+import Lang from '../../common/Lang'
+import Mood from '../../common/Mood'
 
 const Menu = () => {
   const [, setShow] = useContext(MenuContext);
@@ -16,6 +18,8 @@ const Menu = () => {
             <NavLink onClick={() => setShow(false)} to={el.path}>{el.name}</NavLink>
           </li>
         ))}
+        <li><Lang/></li>
+        <li><Mood/></li>
       </StyledMenu>
     </Portal>
   )

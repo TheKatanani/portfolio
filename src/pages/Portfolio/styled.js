@@ -20,6 +20,9 @@ border-radius: 16px;
 /* width: 300px; */
 background-color:${(props) => props.theme.palette.main};
 border: 2px solid ${(props) => props.theme.palette.ColorApp.gray_300};
+${({theme})=>theme.theme === "dark"&&`
+border: 1px solid ${theme.palette.ColorApp.gray_100};
+`}
 header{
   /* height: 200px; */
   margin-bottom:10px;
@@ -31,12 +34,16 @@ header{
     img{
         border-radius: 16px;
         border: 2px solid ${(props) => props.theme.palette.ColorApp.gray_300};
+        ${({theme})=>theme.theme === "dark"&&`
+        border: 1px solid ${theme.palette.ColorApp.gray_100};
+        `}
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
     }
   }
+  
   main{
     /* height: 150px; */
     .title{

@@ -52,6 +52,9 @@ export const darkTheme = {
       main: ColorApp.dark,
       ColorApp: {
           ...ColorApp,
+          primary: "#8FACC0",
+          secondary:"#24343e",
+          third:"#0A4D68",
           gray_800: "#F7FAFC",
           gray_600: "#EFF2F4",
           gray_500: "#E3E8EE",
@@ -60,8 +63,11 @@ export const darkTheme = {
           gray_100: "#606060",
       },
       page: ColorApp.gray_800,
-      font: ColorApp.white,
+      font: ColorApp.gray_200,
   },
   fontSizes,
   media
 };
+// #161616
+// #23323c
+// #99ceee

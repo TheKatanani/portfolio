@@ -8,7 +8,7 @@ export const StyledMenu = styled.ul `
     text-align: center;
     a{
       font-size:${(props) => props.theme.fontSizes.h1}rem;
-      color:${(props) =>  props.theme.palette.ColorApp.dark};
+      color:${(props) =>  props.theme.palette.font};
       font-weight: bold;
       transition: 0.3s;
       &.active{
