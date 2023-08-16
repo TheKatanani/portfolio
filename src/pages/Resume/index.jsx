@@ -1,14 +1,45 @@
 import React from 'react'
-import {  StyledResume } from './styled'
-import { BlueButton, Container } from '../../style/components'
-import { useTranslation } from 'react-i18next'
+import { StyledResume } from './styled'
+import {  Container } from '../../style/components'
 import Box from './Box'
+import useFetch from '../../hook/useFetch'
+import { mainApi } from '../../assets/API'
+import Loading from '../../components/common/Loading'
+import CvDownloader from './CvDownloader'
 
 const Resume = () => {
-  const { t } = useTranslation()
+  const { data, loading, error } = useFetch(`${mainApi}resumes?populate=box.lists`);
+  if (loading) {
+    return <Loading/>
+  } else {
+    console.log(data)
+  }
+  if (error) {
+    return error.message
+  }
   return (
     <StyledResume>
       <Container className='container'>
+        {data.data.map(el => (
+          <section>
+            <h2>{el.attributes.title}</h2>
+            {el.attributes.box.map(e => (
+              <Box key={e.id} title={e.title} discription={e.lists} />
+            ))}
+          </section>
+        )
+        )}
+        <CvDownloader Name='Mohammed Katanani'/>
+      </Container>
+    </StyledResume>
+  )
+}
+
+export default Resume
+
+
+
+/*
         <section>
           <div className='experience'>
             <h1>{t("experience")}</h1>
@@ -20,27 +51,4 @@ const Resume = () => {
           <Box title={t("Vegan Restaurant Website")} discription={[t("RestaurantP1"), t("RestaurantP2")]} />
           <Box title={t("Admin")} discription={[t("AdminP1"), t("AdminP2"), t("AdminP3"), t("AdminP4")]} />
         </section>
-        <section>
-          <h2>{t("Education")}</h2>
-          <Box title={t("2020-present")} discription={[t("BachelorP1"), t("BachelorP2")]} />
-          <Box title={t("11/2022 – 03/2023")} discription={[t("FrontP1")]} />
-        </section>
-        <section>
-          <h2>{t("skills")}</h2>
-          <div className="skills">
-            <Box title={t("Front-End")} discription={["React JS", "Redux", "JavaScript", "ES6", "SCSS", "CSS", "Bootstrap 5", "HTML"]} />
-            <Box title={t("Familiar with")} discription={["Java", "Python", "MySQL", "TypeScript"]} />
-            <Box title={t("Additional")} discription={["command line", "Git", "GitHub"]} />
-          </div>
-        </section>
-        <section>
-          <h2>{t("Languages")}</h2>
-            <Box title={t("Arabic")} discription={[ "native"]} />
-            <Box title={t("English")} discription={["intermediate"]} />
-        </section>
-      </Container>
-    </StyledResume>
-  )
-}
-
-export default Resume
+*/

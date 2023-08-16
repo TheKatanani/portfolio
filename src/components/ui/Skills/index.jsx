@@ -1,11 +1,11 @@
 
 import { SkillsStyled } from './styled'
 
-const Skills = ({data}) => {
+const Skills = ({ data }) => {
   return (
     <SkillsStyled className="skills">
-    {data?.map((el, i) => <span key={i}> #{el}</span>)}
-  </SkillsStyled>
+      {data?.map((el) => <span key={el.id}> #{el.Item}</span>)}
+    </SkillsStyled>
   )
 }
 

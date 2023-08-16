@@ -2,23 +2,35 @@ import React from 'react'
 import { StyledFooter } from './styled'
 import { Container } from '../../../style/components'
 import Social from '../../ui/Social'
+import useFetch from '../../../hook/useFetch'
+import { mainApi } from '../../../assets/API'
 
 const Footer = () => {
+  const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
+  
+  if (loading) {
+    return <loading />
+  }else {
+    
+  }
+  if (error) {
+    return error.message
+  }
   return (
     <StyledFooter>
       <Container className='container'>
-      <p className="copyRight">&copy; 2023 made with ❤ by mohammed katanani</p>
+      <p className="copyRight"> Mohammed Katanani &copy; 2023</p>
       <ul className='infoUl'>
         <li>
-          <h3>call</h3>
-          <p>+970592263808</p>
+          <h3>Call</h3>
+          <p>{data?.data.attributes.phone}</p>
         </li>
         <li>
-          <h3>write</h3>
-          <p>mkhkatanani14@gmail.com</p>
+          <h3>Email</h3>
+          <p>{data?.data.attributes.email}</p>
         </li>
         <li>
-          <h3>follow</h3>
+          <h3>Follow</h3>
           <div><Social/></div>
         </li>
       </ul>

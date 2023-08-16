@@ -8,7 +8,6 @@ export const StyledProjects = styled.div `
       p{
         font-size:${(props) => props.theme.fontSizes.p}rem;
         color:${(props) =>  props.theme.palette.ColorApp.dark};
-        /* margin-bottom: 30px; */
         line-height: 1.6;
       }
     }
@@ -17,6 +16,14 @@ export const StyledProjects = styled.div `
   }
   header{
     text-align: center;
+  }
+  .more{
+    width: fit-content;
+    display: block;
+    margin: auto;
+    button{
+      width: 250px;
+    }
   }
 `
 
@@ -52,43 +59,7 @@ export const StyledBox = styled.div `
       left: -30px;
     }
   }
- 
-  /*
-  useless code 
-  .linkes{
-    width: 200px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    a{
-      transition: 0.3s;
-      flex:1;
-      padding: 10px 0;
-      :first-child{
-        background-color: ${(props) =>  props.theme.palette.ColorApp.third};
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-        border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-        color: ${(props) =>  props.theme.palette.ColorApp.white};
-        :hover{
-          background-color: ${(props) =>  props.theme.palette.ColorApp.third_bold};
-          border:1px solid ${(props) =>  props.theme.palette.ColorApp.third_bold};
-        }
-      }
-      :last-child{
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
-        background-color: transparent;
-        color: ${(props) =>  props.theme.palette.ColorApp.third};
-        border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-        :hover{
-          background-color: ${(props) =>  props.theme.palette.ColorApp.third_bold};
-          border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-          color: ${(props) =>  props.theme.palette.ColorApp.white};
-        }
-      }
-    }
-  } */
+
   .imgArea{
     background-size: cover;
     height: 500px;
@@ -159,14 +130,9 @@ export const StyledBox2 = styled.div `
 
 main{
   padding:0  30px 0 0 ;
-  /* ul.discription{
-        margin: 20px 0px 10px;
-        li{
-          font-size:${(props) => props.theme.fontSizes.body}rem;
-        }
-      } */
     }
   .title{
+    text-align: start;
     margin-left: 30px;
     h2{
       font-size:${(props) => props.theme.fontSizes.h4}rem;
@@ -267,4 +233,9 @@ main{
     }
     }
     }
+    svg{
+    width: ${(props) => props.theme.fontSizes.h2}rem;
+    fill: ${(props) => props.theme.palette.ColorApp.third};
+    transform: translate(0px,10px);
+  }
 `

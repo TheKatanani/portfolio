@@ -13,8 +13,8 @@ const Menu = () => {
   return (
     <Portal >
       <StyledMenu className='menu'>
-        {MenuItems.map((el) => (
-          <li>
+        {MenuItems.map((el,i) => (
+          <li key={i}>
             <NavLink onClick={() => setShow(false)} to={el.path}>{el.name}</NavLink>
           </li>
         ))}

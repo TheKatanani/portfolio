@@ -16,7 +16,11 @@ export const StyledNav = styled.div `
     ${({theme})=>theme.media.xs}{
       padding:15px 10px;
       }
+      a:active{
+        color:${(props) => props.theme.palette.font};
+      }
     .logo-box{
+      color:${(props) => props.theme.palette.font};
       display:flex;
     justify-content:center;
     align-items:center;

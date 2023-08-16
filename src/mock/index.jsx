@@ -42,7 +42,7 @@ export const porjects =[
     title:"Brand(AliExpress clone)", 
     subTitle:"e-commerce website",
     discription:["BrandP1", "BrandP2", "BrandP3","BrandP4","BrandP5","BrandP6"] ,
-    demo:"https://brand-ali-express-clone.netlify.app",
+    demo:"https://splendid-sable-7f7db0.netlify.app/",
     repo:"https://github.com/Mohammed-katanani/ecommerceProject"
   },
   {

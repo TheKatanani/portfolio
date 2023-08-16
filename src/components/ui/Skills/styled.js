@@ -12,6 +12,7 @@ export const SkillsStyled = styled.div`
         color:${(props) =>  props.theme.palette.font};
         background-color: ${(props) => props.theme.palette.ColorApp.gray_300}ae;
         /* margin: 5px 3px; */
+        text-transform:lowercase;
         padding: 1px 3px; 
       }
       :hover{
