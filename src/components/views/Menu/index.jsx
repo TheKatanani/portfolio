@@ -4,7 +4,7 @@ import Portal from '../Portal'
 import { StyledMenu } from './Styled'
 import { MenuItems } from '../../../mock'
 import { MenuContext } from '../../../Context'
-import Lang from '../../common/Lang'
+// import Lang from '../../common/Lang'
 import Mood from '../../common/Mood'
 import { useTranslation } from 'react-i18next'
 

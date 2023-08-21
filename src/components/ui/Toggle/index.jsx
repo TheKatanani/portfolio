@@ -1,4 +1,4 @@
-import Lang from '../../common/Lang';
+// import Lang from '../../common/Lang';
 import Mood from '../../common/Mood';
 import { MainStayled } from './styled';
 const Toggle = () => {
