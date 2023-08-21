@@ -8,6 +8,7 @@ const Projects = lazy(()=>import("../pages/Projects"))
 const Contact = lazy(()=>import("../pages/Contact"))
 const Portfolio = lazy(()=>import("../pages/Portfolio"))
 const PageNotFound = lazy(()=>import("../pages/PageNotFound"))
+const ProjectDetails = lazy(()=>import("../pages/ProjectDetails"))
 const MyRoutes = ()=>{
     return (
       <Suspense fallback={<Loading/>}>
@@ -16,6 +17,7 @@ const MyRoutes = ()=>{
             <Route path="About" element={<About/>} />
             <Route path="resume" element={<Resume/>} />
             <Route path="Projects" element={<Projects/>} />
+            <Route path="Project/:id" element={<ProjectDetails/>} />
             <Route path="contact" element={<Contact/>} />
             <Route path="Portfolio" element={<Portfolio/>} />
             <Route path="*" element={<PageNotFound/>} />

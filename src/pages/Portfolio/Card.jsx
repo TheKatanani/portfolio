@@ -2,8 +2,11 @@ import React from 'react'
 import { StyledCard } from './styled'
 import Skills from '../../components/ui/Skills'
 import Links from '../../components/common/Links'
+import { Link } from 'react-router-dom'
+import { More } from '../../assets/Icons'
 
-const Card = ({ demo, repo, title, discription, img, skills }) => {
+const Card = ({id, links:{demo, repo}, title, description, image, technologies }) => {
+  const img = image.data.attributes.formats.small.url
 
   return (
     <StyledCard {...{ img }}>
@@ -15,24 +18,13 @@ const Card = ({ demo, repo, title, discription, img, skills }) => {
       <main>
         <h2 className='title'>{title}</h2>
         <p className='discription'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          {description.header.substr(0,130)} <Link to={`/project/${id}`}><More/></Link>
         </p>
-        {/* <div className='skills'>
-          {
-            skills.map((li, i) => {
-              return <span key={i}> #{li} </span>
-            })
-          }
-          </div> */}
-          <Skills data={skills} />
+        <div className="skillsContainer">
+          <Skills data={technologies} />
+        </div>
       </main>
-      {/* <footer className='linkes'>
-        <Link to={demo} target='_blank'>demo</Link>
-        <Link to={repo} target='_blank'>repo</Link>
-      </footer> */}
               <Links {...{repo , demo}}/>
-
     </StyledCard>
   )
 }

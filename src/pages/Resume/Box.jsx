@@ -7,8 +7,8 @@ const Box = ({ title, discription }) => {
       <h2>{title}</h2>
       <ul>
         {
-          discription.map((li, i) => {
-            return <li key={i}>{li}</li>
+          discription.map((el) => {
+            return <li key={el.id}>{el.li}</li>
           })
         }
       </ul>

@@ -49,9 +49,10 @@ export const StyledAbout = styled.div `
       display: flex;
       gap:15px;
       margin: 30px 0 60px;
-      button{
+      button , a{
         text-transform:uppercase;
         width: 135px;
+        line-height:40px;
       }
       ${({theme})=>theme.media.xs}{
         display:none;

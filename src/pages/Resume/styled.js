@@ -11,6 +11,14 @@ export const StyledResume = styled.div`
   }
   .container{
   max-width: 850px;
+  position: relative;
+.cvButton{
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 150px;
+  line-height: 40px;
+}
 }
 section:not(:first-child){
   margin: 70px 0;
@@ -32,6 +40,7 @@ section:not(:first-child){
     flex-wrap: wrap;
   }
 }
+
 `
 export const StyledBox = styled.div`
   background-color:${(props) => props.theme.palette.main};

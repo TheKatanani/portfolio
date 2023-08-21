@@ -5,7 +5,7 @@ const Toggle = () => {
   return (
     <MainStayled >
       <Mood/>
-      <Lang/>
+      {/* <Lang/> */}
     </MainStayled>
   )
 }

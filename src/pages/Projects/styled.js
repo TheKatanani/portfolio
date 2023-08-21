@@ -8,7 +8,6 @@ export const StyledProjects = styled.div `
       p{
         font-size:${(props) => props.theme.fontSizes.p}rem;
         color:${(props) =>  props.theme.palette.ColorApp.dark};
-        /* margin-bottom: 30px; */
         line-height: 1.6;
       }
     }
@@ -17,6 +16,14 @@ export const StyledProjects = styled.div `
   }
   header{
     text-align: center;
+  }
+  .more{
+    width: fit-content;
+    display: block;
+    margin: auto;
+    button{
+      width: 250px;
+    }
   }
 `
 
@@ -52,43 +59,7 @@ export const StyledBox = styled.div `
       left: -30px;
     }
   }
- 
-  /*
-  useless code 
-  .linkes{
-    width: 200px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    a{
-      transition: 0.3s;
-      flex:1;
-      padding: 10px 0;
-      :first-child{
-        background-color: ${(props) =>  props.theme.palette.ColorApp.third};
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-        border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-        color: ${(props) =>  props.theme.palette.ColorApp.white};
-        :hover{
-          background-color: ${(props) =>  props.theme.palette.ColorApp.third_bold};
-          border:1px solid ${(props) =>  props.theme.palette.ColorApp.third_bold};
-        }
-      }
-      :last-child{
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
-        background-color: transparent;
-        color: ${(props) =>  props.theme.palette.ColorApp.third};
-        border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-        :hover{
-          background-color: ${(props) =>  props.theme.palette.ColorApp.third_bold};
-          border:1px solid ${(props) =>  props.theme.palette.ColorApp.third};
-          color: ${(props) =>  props.theme.palette.ColorApp.white};
-        }
-      }
-    }
-  } */
+
   .imgArea{
     background-size: cover;
     height: 500px;
@@ -148,25 +119,27 @@ export const StyledBox2 = styled.div `
   .contact{
     padding:10px 27px;
     ${({theme})=>theme.media.s}{
-    padding:5px 12px;
-  }
+      padding:5px 12px;
+    }
     header{
+      position: relative;
       display: flex;
       align-items: center;
     justify-content: space-between;
     margin: 30px 0 20px;
+  
   }
-
+span.more{
+  color:${(props) =>  props.theme.palette.ColorApp.third};
+  /* display: inline-block; */
+  text-align: start;
+  margin: 0;
+  font-weight: bold;
+}
 main{
-  padding:0  30px 0 0 ;
-  /* ul.discription{
-        margin: 20px 0px 10px;
-        li{
-          font-size:${(props) => props.theme.fontSizes.body}rem;
-        }
-      } */
     }
   .title{
+    text-align: start;
     margin-left: 30px;
     h2{
       font-size:${(props) => props.theme.fontSizes.h4}rem;
@@ -187,30 +160,59 @@ main{
       bottom: 0;
       left: -30px;
     }
+    
   }
-  p{
+  .skillsContainer{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    .skills{
+      overflow-x: auto;
+      ul{
+        li{
+          text-wrap:nowrap;
+        }
+      }
+    }
+    .linkes{
+      display: flex;
+      gap: 10px;
+      width: fit-content;
+      a{
+        border-radius: 50%;
+        color: ${(props) => props.theme.palette.ColorApp.gray_400};
+        width: 23px;
+        height: 23px;
+        border: 0.5px solid ${(props) => props.theme.palette.ColorApp.third};
+        text-align:center;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+          width: 18px;
+          fill: ${(props) => props.theme.palette.ColorApp.third};
+          transform: translateY(0px);
+        }
+        :hover{
+          border: 0.5px solid ${(props) => props.theme.palette.ColorApp.gray_300};
+          background-color: ${(props) => props.theme.palette.ColorApp.third};
+          svg{
+            fill: ${(props) => props.theme.palette.ColorApp.gray_300};
+          }
+        }
+      }
+      z-index: 2;
+      /* opacity: 0; */
+    }
+  }
+    p{
       font-size:${(props) => props.theme.fontSizes.body}rem;
+      padding:0  30px 0 0 ;
     }
 }
-  transition:0.3s;
-  position: relative;
-  .linkes{
-    display: none;
-    transition:0.3s;
-  }
-  ::before{
-    transition: 0.3s;
-  }
-  .linkes{
-      display: flex;
-      position: absolute;
-      top:60%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      z-index: 2;
-      opacity: 0;
-    }
-    ::before{
+  /* here the link code  */
+    /* ::before{
       content: '';
       position: absolute;
       top:0;
@@ -220,7 +222,6 @@ main{
       background-color: ${(props) => props.theme.palette.main}ee;
       z-index: 1;
     }
-    /* edite here on font  */
     ::after{
       content: 'SEE MORE';
       font-size:${(props) => props.theme.fontSizes.h1}rem;
@@ -243,8 +244,8 @@ main{
       content: '';
       width: 100%;
     }
-  }
-
+  } */
+  
   
   .imgArea{
     background-size: cover;
@@ -252,6 +253,7 @@ main{
     overflow: hidden;
     transition: 0.4s;
     display: flex;
+    
     /* margin: 0 15px 0 0; */
     img{
       /* align-self: center; */
@@ -267,4 +269,9 @@ main{
     }
     }
     }
+    svg{
+    width: ${(props) => props.theme.fontSizes.h2}rem;
+    fill: ${(props) => props.theme.palette.ColorApp.third};
+    transform: translate(0px,10px);
+  }
 `

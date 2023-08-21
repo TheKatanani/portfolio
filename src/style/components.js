@@ -21,13 +21,15 @@ export const MainButton = styled.button `
     height: 40px;
     border-radius: 6px;
     font-weight: 500;
-    font-size: ${(props) => props.theme.fontSizes.body};
+    font-size: ${(props) => props.theme.fontSizes.body}rem;
     line-height: 19px;
     text-align: center;
     cursor: pointer;
     border: none;
     `
 export const BlueButton = styled(MainButton)`
+    display: block;
+    font-size: ${(props) => props.theme.fontSizes.body}rem;
     border-radius:100px;
     background-color: ${(props) => props.theme.palette.ColorApp.third};
     color:${(props) => props.theme.palette.main};
@@ -42,6 +44,8 @@ export const BlueButton = styled(MainButton)`
     }
 `
 export const WhiteButton = styled(MainButton)`
+    display: block;
+    font-size: ${(props) => props.theme.fontSizes.body}rem;
     border-radius:100px;
     background-color: ${(props) => props.theme.palette.main};
     color:${(props) => props.theme.palette.font};
