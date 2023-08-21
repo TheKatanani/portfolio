@@ -11,9 +11,7 @@ const Resume = () => {
   const { data, loading, error } = useFetch(`${mainApi}resumes?populate=box.lists`);
   if (loading) {
     return <Loading/>
-  } else {
-    console.log(data)
-  }
+  } 
   if (error) {
     return error.message
   }
@@ -29,7 +27,7 @@ const Resume = () => {
           </section>
         )
         )}
-        <CvDownloader Name='Mohammed Katanani'/>
+        <CvDownloader name='Mohammed Katanani'/>
       </Container>
     </StyledResume>
   )

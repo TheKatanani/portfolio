@@ -10,7 +10,7 @@ import Skills from '../../components/ui/Skills';
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const { data, loading, error } = useFetch(`${mainApi}projects/${id}?populate=*`);
+  const { data, loading, error } = useFetch(`${mainApi}projects/${id}?populate=description.features,technologies,category,links,mockup,image`);
 
   if (loading) {
     return <Loading />;
@@ -18,28 +18,46 @@ const ProjectDetails = () => {
   if (error) {
     return error.message;
   }
-  const { title, subTitle, discription, mockup, links, technologies, category } = data.data.attributes;
-  const img = `${mainApi.split("/api/")[0]}${mockup.data.attributes.formats.small.url}`;
+  const { title, subTitle, description, mockup, links, technologies, category } = data.data.attributes;
+  const img = mockup.data.attributes.formats.small.url
   return (
     <StyledDetails>
       <Container className='container'>
         <div className="card">
           <div className="flex">
             <div className="content">
+              <header>
+
               <h1>{title}</h1>
               <h2>{subTitle}</h2>
+              </header>
+              <main>
+
               <div>
                 <strong>category: </strong>{category.data.attributes.type}
               </div>
               <Skills data={technologies} />
-              <pre className='discription'>
-                {discription}
-              </pre>
-              
+              <div className='discription'>
+                <p>
+                  {description.header}
+                </p>
+                <ul>
+                  {
+                    description.features.map(el=>(
+                      <li key={el.id}>{el.feature}</li>
+                    ))
+                  }
+                </ul>
+                <p>
+                  {description.footer}
+                </p>
+              </div>
+              </main>
+              <Links repo={links.repo} demo={links.demo} />
+
             </div>
             <img src={img} alt="" />
           </div>
-          <Links repo={links.repo} demo={links.demo} />
         </div>
       </Container>
     </StyledDetails>

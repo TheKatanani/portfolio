@@ -8,7 +8,7 @@ import Nav from "./components/views/Nav";
 import Footer from "./components/views/Footer";
 import { GlobalStyle } from "./style/global";
 import i18next from "i18next";
-import i18n from './utils/i18next'
+// import i18n from './utils/i18next'
 function App() {
   const [theme, setTheme] = useState(lightTheme);
   const [lang, setLang] = useState(i18next.language);

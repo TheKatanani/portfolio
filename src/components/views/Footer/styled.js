@@ -4,6 +4,7 @@ export const StyledFooter = styled.div`
   color:${(props) => props.theme.palette.font};
   background-color: ${(props) => props.theme.palette.main};
   padding: 1rem 0;
+  text-align: center;
   border-top: 1px solid ${(props) => props.theme.palette.ColorApp.gray_100};
   .container{
     display: flex;
@@ -23,12 +24,23 @@ export const StyledFooter = styled.div`
       li{
         margin-left: 15px;
         text-align: center;
+        a{
+          font-size:${(props) => props.theme.fontSizes.body}rem;
+          color:${(props) =>  props.theme.palette.font};
+        }
         svg{
           width: 16px;
           margin: 0 -10px;
           fill:${(props) => props.theme.palette.font};
         }
       }
+    }
+    ${({theme})=>theme.media.s}{
+    display: grid;
+    height: fit-content;
+    p{
+      order: 2;
+    }
     }
     ${({theme})=>theme.media.xs}{
       justify-content: center;

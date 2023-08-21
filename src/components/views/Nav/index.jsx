@@ -8,14 +8,14 @@ import { useContext } from 'react'
 import { MenuContext } from '../../../Context'
 import { mainApi } from '../../../assets/API'
 import useFetch from '../../../hook/useFetch'
+import { useTranslation } from 'react-i18next'
 
 const Nav = () => {
   const [show, setShow] = useContext(MenuContext);
+  const { t } = useTranslation();
   const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
   if (loading) {
     return <p>...Loadintg</p>
-  } else {
-
   }
   if (error) {
     return error.message
@@ -35,11 +35,11 @@ const Nav = () => {
           </div>
         </Link>
         <ul className='menu'>
-          <NavLink to="/about">ABOUT ME</NavLink>
-          <NavLink to="/resume">RESUME</NavLink>
-          <NavLink to="/projects">PROJECTS</NavLink>
-          <NavLink to="/contact">CONTACT</NavLink>
-          <NavLink to="/portfolio">PORTFOLIO</NavLink>
+          <NavLink to="/about">{t("ABOUT ME")}</NavLink>
+          <NavLink to="/resume">{t("RESUME")}</NavLink>
+          <NavLink to="/projects">{t("PROJECTS")}</NavLink>
+          <NavLink to="/contact">{t("CONTACT")}</NavLink>
+          <NavLink to="/portfolio">{t("PORTFOLIO")}</NavLink>
         </ul>
         <div className="menuIcon" onClick={() => setShow(!show)}>
         </div>

@@ -57,26 +57,30 @@ header{
       font-size:${(props) => props.theme.fontSizes.body}rem;
       color:${(props) =>  props.theme.palette.font};
     }
-    .skills{
-      margin: 10px 0;
-      flex-wrap:nowrap;
-      padding:0;
+    .skillsContainer{
       overflow-x:auto ;
-      span{
-        text-wrap:nowrap;
-      }
-      /* Scrollbar */
-      ::-webkit-scrollbar {
-        width: 0px ;
+      margin: 0 0 10px;
+      .skills{
+        flex-wrap:nowrap;
         padding:0;
-      }
-      ::-webkit-scrollbar-thumb {
-        background-color: #b3b3b3;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background-color: #f1f1f1;
-        border-radius: 10px;
+        li{
+          text-wrap:nowrap;
+        }
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+          cursor: pointer;
+          width: 0px ;
+          height: 5px;
+          padding:0;
+        }
+        ::-webkit-scrollbar-thumb {
+          background-color: #b3b3b3;
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -103,6 +107,13 @@ export const StyledFilter =styled.ul`
   gap: 5px;
   li{
     padding: 15px 10px;
+    ${({theme})=>theme.media.s}{
+      padding: 10px 4px;
+    }
+    ${({theme})=>theme.media.xs}{
+      padding: 8px 2px;
+      font-size: 12px;
+    }
     cursor: pointer;
     background-color: white;
     font-size:${(props) => props.theme.fontSizes.h4}rem;

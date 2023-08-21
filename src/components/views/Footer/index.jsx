@@ -4,12 +4,14 @@ import { Container } from '../../../style/components'
 import Social from '../../ui/Social'
 import useFetch from '../../../hook/useFetch'
 import { mainApi } from '../../../assets/API'
+// import { Link } from 'react-router-dom'
+import Loading from '../../common/Loading'
 
 const Footer = () => {
   const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
   
   if (loading) {
-    return <loading />
+    return <Loading />
   }else {
     
   }
@@ -23,11 +25,11 @@ const Footer = () => {
       <ul className='infoUl'>
         <li>
           <h3>Call</h3>
-          <p>{data?.data.attributes.phone}</p>
+          <a href={`https://wa.me/${data?.data.attributes.phone}`}>{data?.data.attributes.phone}</a>
         </li>
         <li>
-          <h3>Email</h3>
-          <p>{data?.data.attributes.email}</p>
+          <h3>Write</h3>
+          <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>
         </li>
         <li>
           <h3>Follow</h3>

@@ -7,6 +7,7 @@ import Buttons from './Buttons'
 import useFetch from '../../hook/useFetch'
 import { mainApi } from '../../assets/API'
 import Social from '../../components/ui/Social'
+import Loading from '../../components/common/Loading'
 
 const Card = () => {
   const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
@@ -14,9 +15,7 @@ const Card = () => {
   // console.log(data.data.attributes.avatar.data.attributes.url)
   // const { t } = useTranslation();
   if (loading) {
-    return <loading />
-  }else {
-    
+    return <Loading />
   }
   if (error) {
     return error.message
@@ -26,8 +25,7 @@ const Card = () => {
   return (
     <StyledCard>
       <main>
-        {/* remove the api from the url to get deferent end point */}
-        <Avater img={`${mainApi.split("/api/")[0]}${data.data.attributes.avatar.data.attributes.url}`} />
+        <Avater img={data.data.attributes.avatar.data.attributes.url} />
         <div className="name">{data.data.attributes.name}</div>
         <div className="jobTitle">{data.data.attributes.jobTitle}</div>
         <Buttons />

@@ -12,14 +12,17 @@ import { Link } from 'react-router-dom'
 const Projects = () => {
   const { t } = useTranslation()
   const { data: data1, loading: loading1, error: error1 } = useFetch(`${mainApi}projects?populate=*`);
-  const { data: data2, loading: loading2, error: error2 } = useFetch(`${mainApi}project-p`);
+  // const { data: data2, loading: loading2, error: error2 } = useFetch(`${mainApi}project-p`);
 
-  if (loading1 || loading2) {
+  // if (loading1 || loading2) {
+  if (loading1) {
     return <Loading/>;
   }
 
-  if (error1 || error2) {
-    return <p>Error: {error1?.message || error2?.message}</p>;
+  if (error1 ) {
+  // if (error1 || error2) {
+  //   return <p>Error: {error1?.message || error2?.message}</p>;
+    return <p>Error: {error1?.message }</p>;
   }
 
   return (
@@ -27,7 +30,7 @@ const Projects = () => {
       <Container className='container'>
         <header>
             <Title>{t("Projects")}</Title>
-            <p>{data2.data.attributes.paragraph}</p>
+            {/* <p>{data2.data.attributes.paragraph}</p> */}
         </header>
         <section>   
           {

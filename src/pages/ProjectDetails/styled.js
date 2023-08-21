@@ -8,7 +8,7 @@ color:${(props) =>  props.theme.palette.font};
   
   .container{
     .card{
-      padding: 20px;
+      padding: 30px;
       border-radius: 16px;
       /* width: 300px; */
       background-color:${(props) => props.theme.palette.main};
@@ -16,18 +16,34 @@ color:${(props) =>  props.theme.palette.font};
       ${({theme})=>theme.theme === "dark"&&`
       border: 1px solid ${theme.palette.ColorApp.gray_100};
       `}
+      header{
+        position: relative;
+        padding:0px 30px;
+        ::before{
+          content: "";
+          background-color: ${(props) =>  props.theme.palette.ColorApp.third};
+          width: 20px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0px;
+        }
+      }
     .flex{
       display: flex;
       gap:20px;
     flex-wrap: wrap;
     .content{
-      pre{
-      overflow: auto;
-      }
       flex:2;
       min-width: min(100%,700px);
       .discription{
         font-family: inherit;
+        ul{
+          margin: 20px 0;
+          li{
+            margin: 2px 0px 2px 10px;
+          }
+        }
       }
       h1{
         font-size:${(props) => props.theme.fontSizes.h1}rem;

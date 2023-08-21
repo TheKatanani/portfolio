@@ -6,10 +6,10 @@ import useFetch from '../../../hook/useFetch';
 const Logo = () => {
   const [theme, ] = useContext(ThemeContext);
   const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
-  const Dark =`${mainApi.split("/api/")[0]}${data?.data.attributes.logo.data[0].attributes.url}`
-  const Light =`${mainApi.split("/api/")[0]}${data?.data.attributes.logo.data[1].attributes.url}`
+  const Dark =data?.data.attributes.logo.data[0].attributes.url
+  const Light =data?.data.attributes.logo.data[1].attributes.url
   if (loading) {
-    return <p>...Loadintg</p>
+    return <p>...</p>
   }else {
     
   }
