@@ -1,13 +1,10 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../../Context';
-import { mainApi } from '../../../assets/API';
-import useFetch from '../../../hook/useFetch';
 import { actions } from '../../../assets/actions';
 import useFirebase from '../../../hook/useFirebase';
 
 const Logo = () => {
   const [theme,] = useContext(ThemeContext);
-  // const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
   const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'info' })
   if (loading) {
     return <p>Loading...</p>

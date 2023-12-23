@@ -2,15 +2,11 @@ import React from 'react'
 import { StyledFooter } from './styled'
 import { Container } from '../../../style/components'
 import Social from '../../ui/Social'
-import useFetch from '../../../hook/useFetch'
-import { mainApi } from '../../../assets/API'
-// import { Link } from 'react-router-dom'
 import Loading from '../../common/Loading'
 import useFirebase from '../../../hook/useFirebase'
 import { actions } from '../../../assets/actions'
 
 const Footer = () => {
-  // const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
   const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'info' })
   if (loading) {
     return <Loading />
