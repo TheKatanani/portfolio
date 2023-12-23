@@ -5,24 +5,20 @@ import { useTranslation } from 'react-i18next'
 import Box from './Box'
 import Title from '../../components/common/Title'
 import Loading from '../../components/common/Loading'
-import useFetch from '../../hook/useFetch'
-import { mainApi } from '../../assets/API'
 import { Link } from 'react-router-dom'
+import useFirebase from '../../hook/useFirebase'
+import { actions } from '../../assets/actions'
 
 const Projects = () => {
   const { t } = useTranslation()
-  const { data: data1, loading: loading1, error: error1 } = useFetch(`${mainApi}projects?populate=*`);
-  // const { data: data2, loading: loading2, error: error2 } = useFetch(`${mainApi}project-p`);
+  const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'project' })
 
-  // if (loading1 || loading2) {
-  if (loading1) {
+  if (loading) {
     return <Loading/>;
   }
 
-  if (error1 ) {
-  // if (error1 || error2) {
-  //   return <p>Error: {error1?.message || error2?.message}</p>;
-    return <p>Error: {error1?.message }</p>;
+  if (error ) {
+    return <p>Error: {error?.message }</p>;
   }
 
   return (
@@ -30,13 +26,12 @@ const Projects = () => {
       <Container className='container'>
         <header>
             <Title>{t("Projects")}</Title>
-            {/* <p>{data2.data.attributes.paragraph}</p> */}
         </header>
         <section>   
           {
-            data1.data.map((el)=>(
-              el.attributes.isMainProject&&
-              <Box key={el.id} id={el.id} {...el.attributes}/>
+            data.map((el)=>(
+              el?.isMainProject&&
+              <Box key={el?.id} id={el?.id} {...el}/>
             ))
           }        
         </section>

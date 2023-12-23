@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 import { Code, Demo } from '../../assets/Icons'
 
 const Box = (props) => {
-  // const { links: { demo, repo }, title, subTitle, discription, image, technologies } =props
-  const img = props.mockup.data.attributes.url
+  const img = props.mockup
 
   return (
     <StyledBox2 className='box2' {...{ img }}>
@@ -14,20 +13,20 @@ const Box = (props) => {
         <header>
           <div className="title">
             <h2>{props.title}</h2>
-            {props.subTitle && <p>{props.subTitle}</p>}
+            {props?.subTitle && <p>{props?.subTitle}</p>}
           </div>
         </header>
         <main>
           <div className='skillsContainer'>
             <Skills data={props.technologies} />
             <div className='linkes'>
-              <Link to={props.links.demo} target='_blank'><Demo/></Link>
-              <Link to={props.links.repo} target='_blank'><Code/></Link>
+              <Link to={props?.demo} target='_blank'><Demo/></Link>
+              <Link to={props?.repo} target='_blank'><Code/></Link>
             </div>
           </div>
           <div className='discription'>
-            <p>{props.description.header.substring(0, 250)}
-              <Link to={`/project/${props.id}`}>...<span className='more'>more</span></Link>
+            <p>{props?.description?.header.substring(0, 250)}
+              <Link to={`/project/${props?.id}`}>...<span className='more'>more</span></Link>
             </p>
           </div>
         </main>

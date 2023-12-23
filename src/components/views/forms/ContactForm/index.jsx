@@ -22,12 +22,11 @@ const ContactForm = ({setShowAlert}) => {
 
     emailjs.send('service_m7ire35', 'template_xydakha', formData, 'lilTGmT1l8WZrJDby')
       .then((result) => {
-        console.log(result.text);
         // create state for alert in the main page and change the value here
         setShowAlert(true)
         setFormData(inital);
       }, (error) => {
-        console.log(error.text);
+        console.error(error.text);
       });
   };
 

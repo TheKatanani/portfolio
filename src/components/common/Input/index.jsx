@@ -6,6 +6,7 @@ const Input = (props) => {
     <div className="input">
       <Label htmlFor={props.id}>{props.label}</Label>
       <InputStyled
+        as={props.as}
         type={props.type}
         id={props.id}
         name={props.name}

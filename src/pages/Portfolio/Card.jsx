@@ -5,26 +5,24 @@ import Links from '../../components/common/Links'
 import { Link } from 'react-router-dom'
 import { More } from '../../assets/Icons'
 
-const Card = ({id, links:{demo, repo}, title, description, image, technologies }) => {
-  const img = image.data.attributes.formats.small.url
-
+const Card = ({ id, demo, repo, title, description, image, technologies }) => {
   return (
-    <StyledCard {...{ img }}>
+    <StyledCard {...{ image }}>
       <header>
         <div className="imgArea">
-          <img src={img} alt=""></img>
+          <img src={image} alt=""></img>
         </div>
       </header>
       <main>
         <h2 className='title'>{title}</h2>
         <p className='discription'>
-          {description.header.substr(0,130)} <Link to={`/project/${id}`}><More/></Link>
+          {description.header.substr(0, 130)} <Link to={`/project/${id}`}><More /></Link>
         </p>
         <div className="skillsContainer">
           <Skills data={technologies} />
         </div>
       </main>
-              <Links {...{repo , demo}}/>
+      <Links {...{ repo, demo }} />
     </StyledCard>
   )
 }

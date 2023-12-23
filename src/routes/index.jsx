@@ -19,7 +19,7 @@ const MyRoutes = ()=>{
             <Route path="Projects" element={<Projects/>} />
             <Route path="Project/:id" element={<ProjectDetails/>} />
             <Route path="contact" element={<Contact/>} />
-            <Route path="Portfolio" element={<Portfolio/>} />
+            <Route path="Portfolio" element={<Portfolio/>} /> 
             <Route path="*" element={<PageNotFound/>} />
         </Routes>
       </Suspense>

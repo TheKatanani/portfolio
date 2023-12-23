@@ -5,11 +5,13 @@ import { Container } from '../../style/components';
 // import { useTranslation } from 'react-i18next'
 import { LangContext } from '../../Context';
 import Buttons from './Buttons';
-import useFetch from '../../hook/useFetch'
-import { mainApi } from '../../assets/API';
 import Loading from '../../components/common/Loading'
+import useFirebase from '../../hook/useFirebase';
+import { actions } from '../../assets/actions';
 const About = () => {
-  const {data ,loading , error}=useFetch(`${mainApi}abouts`);
+  // this is for strapi api
+  // const {data ,loading , error}=useFetch(`${mainApi}abouts`); 
+  const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'about' })
   // const {t} =useTranslation();
   const [lang]= useContext(LangContext);
   if (loading){
@@ -23,10 +25,10 @@ const About = () => {
       <Container className='container'>
         <Card/>   
         <div className="content">
-          <h1>{data.data[0].attributes.title}</h1>
-          <p>{data.data[0].attributes.subTitle}</p>
+          <h1>{data[0]?.title}</h1>
+          <p>{data[0]?.subTitle}</p>
           <Buttons/>
-          <p className="discription">{data.data[0].attributes.description}</p>
+          <p className="discription">{data[0]?.description}</p>
         </div>
       </Container>
     </StyledAbout>

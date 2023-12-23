@@ -1,25 +1,24 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/common/Loading';
-import useFetch from '../../hook/useFetch';
-import { mainApi } from '../../assets/API';
 import { Container } from '../../style/components';
 import { StyledDetails } from './styled';
 import Links from '../../components/common/Links';
 import Skills from '../../components/ui/Skills';
+import useFirebase from '../../hook/useFirebase';
+import { actions } from '../../assets/actions';
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const { data, loading, error } = useFetch(`${mainApi}projects/${id}?populate=description.features,technologies,category,links,mockup,image`);
-
+  const { data, loading, error } = useFirebase(actions.GET_ONE, { path: 'project', id })
   if (loading) {
     return <Loading />;
   }
   if (error) {
     return error.message;
   }
-  const { title, subTitle, description, mockup, links, technologies, category } = data.data.attributes;
-  const img = mockup.data.attributes.formats.small.url
+  // const detailsData = data.filter(el => el.id === id)
+  const { title, subTitle, description, mockup, demo, repo, technologies, category } = data;
   return (
     <StyledDetails>
       <Container className='container'>
@@ -28,35 +27,35 @@ const ProjectDetails = () => {
             <div className="content">
               <header>
 
-              <h1>{title}</h1>
-              <h2>{subTitle}</h2>
+                <h1>{title}</h1>
+                <h2>{subTitle}</h2>
               </header>
               <main>
 
-              <div>
-                <strong>category: </strong>{category.data.attributes.type}
-              </div>
-              <Skills data={technologies} />
-              <div className='discription'>
-                <p>
-                  {description.header}
-                </p>
-                <ul>
-                  {
-                    description.features.map(el=>(
-                      <li key={el.id}>{el.feature}</li>
-                    ))
-                  }
-                </ul>
-                <p>
-                  {description.footer}
-                </p>
-              </div>
+                <div>
+                  <strong>category: </strong>{category}
+                </div>
+                <Skills data={technologies} />
+                <div className='discription'>
+                  <p>
+                    {description?.header}
+                  </p>
+                  <ul>
+                    {
+                      description?.features.map(feature => (
+                        <li key={feature?.id}>{feature?.data}</li>
+                      ))
+                    }
+                  </ul>
+                  <p>
+                    {description?.footer}
+                  </p>
+                </div>
               </main>
-              <Links repo={links.repo} demo={links.demo} />
+              <Links repo={repo} demo={demo} />
 
             </div>
-            <img src={img} alt="" />
+            <img src={mockup} alt="" />
           </div>
         </div>
       </Container>

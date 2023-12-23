@@ -9,11 +9,15 @@ import { MenuContext } from '../../../Context'
 import { mainApi } from '../../../assets/API'
 import useFetch from '../../../hook/useFetch'
 import { useTranslation } from 'react-i18next'
+import useFirebase from '../../../hook/useFirebase'
+import { actions } from '../../../assets/actions'
 
 const Nav = () => {
   const [show, setShow] = useContext(MenuContext);
   const { t } = useTranslation();
-  const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
+  // const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
+
+  const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'info' })
   if (loading) {
     return <p>...Loadintg</p>
   }
@@ -29,8 +33,8 @@ const Nav = () => {
               <Logo />
             </div>
             <div className="text">
-              <h2 className="name">{data.data.attributes.name}</h2>
-              <p className="jobTitle">{data.data.attributes.jobTitle}</p>
+              <h2 className="name">{data[0]?.name}</h2>
+              <p className="jobTitle">{data[0]?.jobTitle}</p>
             </div>
           </div>
         </Link>

@@ -2,7 +2,6 @@
 import { AvaterStyled } from './styled'
 
 const Avater = ({img}) => {
-  console.log(img)
   return (
     <AvaterStyled className='avater' src={img} alt="" />
   )

@@ -115,7 +115,7 @@ export const StyledFilter =styled.ul`
       font-size: 12px;
     }
     cursor: pointer;
-    background-color: white;
+    background-color:${(props) => props.theme.palette.main};
     font-size:${(props) => props.theme.fontSizes.h4}rem;
       color:${(props) =>  props.theme.palette.font};
       transition: 0.3s;

@@ -1,15 +1,17 @@
 import React from 'react';
 import { BlueButton } from '../../../style/components';
-import { mainApi } from '../../../assets/API';
-import useFetch from '../../../hook/useFetch';
+import useFirebase from '../../../hook/useFirebase';
+import { actions } from '../../../assets/actions';
 
 const CvDownloader = ({ name }) => {
-  const { data, loading, error } = useFetch(`${mainApi}cv?populate=*`);
-  const url = data?.data.attributes.cv.data.attributes.url;
+  // you can use getone insted
+  const {data, loading, error} = useFirebase(actions.GET_ALL,{path:'resumeFile'}) 
 
+  
   if (loading) {
     return <span>...Loading</span>;
   }
+  const url = data[0]?.url;
 
   if (error) {
     return <span>{error.message}</span>;

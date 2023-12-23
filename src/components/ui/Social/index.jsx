@@ -2,40 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaceBook, GitHub, Instagram, LinkedIn } from '../../../assets/Icons'
 import { StyledSocial } from './styled'
-import useFetch from '../../../hook/useFetch'
-import { mainApi } from '../../../assets/API'
+import useFirebase from '../../../hook/useFirebase'
+import { actions } from '../../../assets/actions'
+import Loading from '../../common/Loading'
 
 const Social = () => {
-  const { data, loading, error } = useFetch(`${mainApi}infos/1?populate=*`);
-  const social = {
-  facebook: data?.data.attributes.social.facebook,
-  github: data?.data.attributes.social.github,
-  instagram: data?.data.attributes.social.instagram,
-  linkedIn: data?.data.attributes.social.linkedIn
-  }
+  // you can use getone insted
+  const { data, loading, error } = useFirebase(actions.GET_ALL, { path: 'info' })
+
   if (loading) {
-    return <loading />
-  }else {
-    
+    return <Loading/>
+  }
+  const social = {
+    facebook: data[0]?.social.facebook,
+    github: data[0]?.social.github,
+    instagram: data[0]?.social.instagram,
+    linkedIn: data[0]?.social.linkedIn
   }
   if (error) {
     return error.message
   }
   return (
     <StyledSocial>
-          <li>
-            <Link to={social.facebook} target='_blank'><FaceBook/></Link>
-          </li>
-          <li>
-            <Link to={social.github} target='_blank'><GitHub/></Link>
-          </li>
-          <li>
-            <Link to={social.linkedIn} target='_blank'><LinkedIn/></Link>
-          </li>
-          <li>
-            <Link to={social.instagram} target='_blank'><Instagram/></Link>
-          </li>
-        </StyledSocial>
+      <li>
+        <Link to={social.facebook} target='_blank'><FaceBook /></Link>
+      </li>
+      <li>
+        <Link to={social.github} target='_blank'><GitHub /></Link>
+      </li>
+      <li>
+        <Link to={social.linkedIn} target='_blank'><LinkedIn /></Link>
+      </li>
+      <li>
+        <Link to={social.instagram} target='_blank'><Instagram /></Link>
+      </li>
+    </StyledSocial>
   )
 }
 
