@@ -20,7 +20,7 @@ export const StyledNav = styled.div `
         color:${(props) => props.theme.palette.font};
       }
     .logo-box{
-      color:${(props) => props.theme.palette.font};
+      color:${(props) => props.theme.palette.ColorApp.third};
       display:flex;
     justify-content:center;
     align-items:center;
@@ -28,14 +28,11 @@ export const StyledNav = styled.div `
     .logo{
       width: 65px;
       img{
-        border:2px solid ${(props) => props.theme.palette.font};
+        /* border:2px solid ${(props) => props.theme.palette.font}; */
         max-width: 100%;
         object-fit:contain;
       }
-    }
-    .text{
-      transform: translateY(-5px);
-    }
+    } 
     }
    
     ul{

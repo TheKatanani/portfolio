@@ -17,7 +17,12 @@ const Social = () => {
     facebook: data[0]?.social.facebook,
     github: data[0]?.social.github,
     instagram: data[0]?.social.instagram,
-    linkedIn: data[0]?.social.linkedIn
+    linkedIn: data[0]?.social.linkedIn,
+    X: data[0]?.social.X,
+    upwork: data[0]?.social.upwork,
+    freelancer: data[0]?.social.freelancer,
+    khamsat: data[0]?.social.khamsat,
+    mostaql: data[0]?.social.mostaql,
   }
   if (error) {
     return error.message
